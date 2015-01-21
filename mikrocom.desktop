@@ -1,0 +1,13 @@
+[Desktop Entry]
+Encoding=UTF-8
+BinaryPattern=
+Name=mikroCom
+MimeType=
+GenericName=Serial Terminal
+Exec=mikrocom
+Icon=
+TerminalOptions=
+Path=
+Type=Application
+Terminal=0
+X-KDE-StartupNotify=false

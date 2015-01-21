@@ -1,0 +1,1 @@
+/home/janis/Documents/qt/mikrocom/build/CMakeFiles/mikrocom.dir

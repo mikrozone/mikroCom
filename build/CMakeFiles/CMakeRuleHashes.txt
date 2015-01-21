@@ -1,0 +1,3 @@
+# Hashes of file build rules.
+a7ebc7da95ea3fa45e9e5d4e79e4d344 moc_qcppdialogimpl.cxx
+3bf7019746a9ae61016d3e3f48982f40 ui_mikrocomdlg.h

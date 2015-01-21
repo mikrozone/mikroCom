@@ -1,0 +1,1 @@
+/usr/bin/c++       CMakeFiles/mikrocom.dir/main.o CMakeFiles/mikrocom.dir/qcppdialogimpl.o CMakeFiles/mikrocom.dir/moc_qcppdialogimpl.o  -o mikrocom -rdynamic -lQt3Support -lQtGui -lQtCore 
