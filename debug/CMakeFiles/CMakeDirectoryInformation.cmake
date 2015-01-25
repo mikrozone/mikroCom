@@ -3,7 +3,7 @@
 
 # Relative path conversion top directories.
 SET(CMAKE_RELATIVE_PATH_TOP_SOURCE "/home/janis/git/mikroCom")
-SET(CMAKE_RELATIVE_PATH_TOP_BINARY "/home/janis/git/mikroCom/build")
+SET(CMAKE_RELATIVE_PATH_TOP_BINARY "/home/janis/git/mikroCom/debug")
 
 # Force unix paths in dependencies.
 SET(CMAKE_FORCE_UNIX_PATHS 1)

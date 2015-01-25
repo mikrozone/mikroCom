@@ -4,9 +4,9 @@ SET(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 SET(CMAKE_DEPENDS_CHECK_CXX
-  "/home/janis/git/mikroCom/main.cpp" "/home/janis/git/mikroCom/build/CMakeFiles/mikrocom.dir/main.o"
-  "/home/janis/git/mikroCom/build/moc_qcppdialogimpl.cxx" "/home/janis/git/mikroCom/build/CMakeFiles/mikrocom.dir/moc_qcppdialogimpl.o"
-  "/home/janis/git/mikroCom/qcppdialogimpl.cpp" "/home/janis/git/mikroCom/build/CMakeFiles/mikrocom.dir/qcppdialogimpl.o"
+  "/home/janis/git/mikroCom/main.cpp" "/home/janis/git/mikroCom/debug/CMakeFiles/mikrocom.dir/main.o"
+  "/home/janis/git/mikroCom/debug/moc_qcppdialogimpl.cxx" "/home/janis/git/mikroCom/debug/CMakeFiles/mikrocom.dir/moc_qcppdialogimpl.o"
+  "/home/janis/git/mikroCom/qcppdialogimpl.cpp" "/home/janis/git/mikroCom/debug/CMakeFiles/mikrocom.dir/qcppdialogimpl.o"
   )
 SET(CMAKE_CXX_COMPILER_ID "GNU")
 

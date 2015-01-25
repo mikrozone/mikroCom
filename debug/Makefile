@@ -45,7 +45,7 @@ CMAKE_EDIT_COMMAND = /usr/bin/ccmake
 CMAKE_SOURCE_DIR = /home/janis/git/mikroCom
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/janis/git/mikroCom/build
+CMAKE_BINARY_DIR = /home/janis/git/mikroCom/debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -113,9 +113,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/janis/git/mikroCom/build/CMakeFiles /home/janis/git/mikroCom/build/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/janis/git/mikroCom/debug/CMakeFiles /home/janis/git/mikroCom/debug/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/janis/git/mikroCom/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/janis/git/mikroCom/debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target

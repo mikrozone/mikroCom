@@ -1,19 +1,19 @@
 Determining if the Q_WS_WIN exist failed with the following output:
-Change Dir: /home/janis/Documents/qt/mikrocom/build/CMakeFiles/CMakeTmp
+Change Dir: /home/janis/git/mikroCom/build/CMakeFiles/CMakeTmp
 
-Run Build Command:/usr/bin/make "cmTryCompileExec2040414328/fast"
-/usr/bin/make -f CMakeFiles/cmTryCompileExec2040414328.dir/build.make CMakeFiles/cmTryCompileExec2040414328.dir/build
-make[1]: Entering directory `/home/janis/Documents/qt/mikrocom/build/CMakeFiles/CMakeTmp'
-/usr/bin/cmake -E cmake_progress_report /home/janis/Documents/qt/mikrocom/build/CMakeFiles/CMakeTmp/CMakeFiles 1
-Building CXX object CMakeFiles/cmTryCompileExec2040414328.dir/CheckSymbolExists.cxx.o
-/usr/bin/c++    -I/usr/include/qt4    -o CMakeFiles/cmTryCompileExec2040414328.dir/CheckSymbolExists.cxx.o -c /home/janis/Documents/qt/mikrocom/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx
-/home/janis/Documents/qt/mikrocom/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx: In function ‘int main(int, char**)’:
-/home/janis/Documents/qt/mikrocom/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:8:19: error: ‘Q_WS_WIN’ was not declared in this scope
-make[1]: Leaving directory `/home/janis/Documents/qt/mikrocom/build/CMakeFiles/CMakeTmp'
-make[1]: *** [CMakeFiles/cmTryCompileExec2040414328.dir/CheckSymbolExists.cxx.o] Error 1
-make: *** [cmTryCompileExec2040414328/fast] Error 2
+Run Build Command:/usr/bin/make "cmTryCompileExec126498163/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec126498163.dir/build.make CMakeFiles/cmTryCompileExec126498163.dir/build
+make[1]: Entering directory `/home/janis/git/mikroCom/build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/janis/git/mikroCom/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building CXX object CMakeFiles/cmTryCompileExec126498163.dir/CheckSymbolExists.cxx.o
+/usr/bin/c++    -I/usr/include/qt4    -o CMakeFiles/cmTryCompileExec126498163.dir/CheckSymbolExists.cxx.o -c /home/janis/git/mikroCom/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx
+/home/janis/git/mikroCom/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx: In function ‘int main(int, char**)’:
+/home/janis/git/mikroCom/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:8:19: error: ‘Q_WS_WIN’ was not declared in this scope
+make[1]: Leaving directory `/home/janis/git/mikroCom/build/CMakeFiles/CMakeTmp'
+make[1]: *** [CMakeFiles/cmTryCompileExec126498163.dir/CheckSymbolExists.cxx.o] Error 1
+make: *** [cmTryCompileExec126498163/fast] Error 2
 
-File /home/janis/Documents/qt/mikrocom/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:
+File /home/janis/git/mikroCom/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:
 /* */
 #include <QtCore/qglobal.h>
 
@@ -29,21 +29,21 @@ int main(int argc, char** argv)
 }
 
 Determining if the Q_WS_QWS exist failed with the following output:
-Change Dir: /home/janis/Documents/qt/mikrocom/build/CMakeFiles/CMakeTmp
+Change Dir: /home/janis/git/mikroCom/build/CMakeFiles/CMakeTmp
 
-Run Build Command:/usr/bin/make "cmTryCompileExec3798390293/fast"
-/usr/bin/make -f CMakeFiles/cmTryCompileExec3798390293.dir/build.make CMakeFiles/cmTryCompileExec3798390293.dir/build
-make[1]: Entering directory `/home/janis/Documents/qt/mikrocom/build/CMakeFiles/CMakeTmp'
-/usr/bin/cmake -E cmake_progress_report /home/janis/Documents/qt/mikrocom/build/CMakeFiles/CMakeTmp/CMakeFiles 1
-Building CXX object CMakeFiles/cmTryCompileExec3798390293.dir/CheckSymbolExists.cxx.o
-/usr/bin/c++    -I/usr/include/qt4    -o CMakeFiles/cmTryCompileExec3798390293.dir/CheckSymbolExists.cxx.o -c /home/janis/Documents/qt/mikrocom/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx
-/home/janis/Documents/qt/mikrocom/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx: In function ‘int main(int, char**)’:
-/home/janis/Documents/qt/mikrocom/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:8:19: error: ‘Q_WS_QWS’ was not declared in this scope
-make[1]: Leaving directory `/home/janis/Documents/qt/mikrocom/build/CMakeFiles/CMakeTmp'
-make[1]: *** [CMakeFiles/cmTryCompileExec3798390293.dir/CheckSymbolExists.cxx.o] Error 1
-make: *** [cmTryCompileExec3798390293/fast] Error 2
+Run Build Command:/usr/bin/make "cmTryCompileExec1276523442/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec1276523442.dir/build.make CMakeFiles/cmTryCompileExec1276523442.dir/build
+make[1]: Entering directory `/home/janis/git/mikroCom/build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/janis/git/mikroCom/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building CXX object CMakeFiles/cmTryCompileExec1276523442.dir/CheckSymbolExists.cxx.o
+/usr/bin/c++    -I/usr/include/qt4    -o CMakeFiles/cmTryCompileExec1276523442.dir/CheckSymbolExists.cxx.o -c /home/janis/git/mikroCom/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx
+/home/janis/git/mikroCom/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx: In function ‘int main(int, char**)’:
+/home/janis/git/mikroCom/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:8:19: error: ‘Q_WS_QWS’ was not declared in this scope
+make[1]: *** [CMakeFiles/cmTryCompileExec1276523442.dir/CheckSymbolExists.cxx.o] Error 1
+make[1]: Leaving directory `/home/janis/git/mikroCom/build/CMakeFiles/CMakeTmp'
+make: *** [cmTryCompileExec1276523442/fast] Error 2
 
-File /home/janis/Documents/qt/mikrocom/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:
+File /home/janis/git/mikroCom/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:
 /* */
 #include <QtCore/qglobal.h>
 
@@ -59,21 +59,21 @@ int main(int argc, char** argv)
 }
 
 Determining if the Q_WS_MAC exist failed with the following output:
-Change Dir: /home/janis/Documents/qt/mikrocom/build/CMakeFiles/CMakeTmp
+Change Dir: /home/janis/git/mikroCom/build/CMakeFiles/CMakeTmp
 
-Run Build Command:/usr/bin/make "cmTryCompileExec2817959352/fast"
-/usr/bin/make -f CMakeFiles/cmTryCompileExec2817959352.dir/build.make CMakeFiles/cmTryCompileExec2817959352.dir/build
-make[1]: Entering directory `/home/janis/Documents/qt/mikrocom/build/CMakeFiles/CMakeTmp'
-/usr/bin/cmake -E cmake_progress_report /home/janis/Documents/qt/mikrocom/build/CMakeFiles/CMakeTmp/CMakeFiles 1
-Building CXX object CMakeFiles/cmTryCompileExec2817959352.dir/CheckSymbolExists.cxx.o
-/usr/bin/c++    -I/usr/include/qt4    -o CMakeFiles/cmTryCompileExec2817959352.dir/CheckSymbolExists.cxx.o -c /home/janis/Documents/qt/mikrocom/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx
-/home/janis/Documents/qt/mikrocom/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx: In function ‘int main(int, char**)’:
-/home/janis/Documents/qt/mikrocom/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:8:19: error: ‘Q_WS_MAC’ was not declared in this scope
-make[1]: Leaving directory `/home/janis/Documents/qt/mikrocom/build/CMakeFiles/CMakeTmp'
-make[1]: *** [CMakeFiles/cmTryCompileExec2817959352.dir/CheckSymbolExists.cxx.o] Error 1
-make: *** [cmTryCompileExec2817959352/fast] Error 2
+Run Build Command:/usr/bin/make "cmTryCompileExec1883242068/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec1883242068.dir/build.make CMakeFiles/cmTryCompileExec1883242068.dir/build
+make[1]: Entering directory `/home/janis/git/mikroCom/build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/janis/git/mikroCom/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building CXX object CMakeFiles/cmTryCompileExec1883242068.dir/CheckSymbolExists.cxx.o
+/usr/bin/c++    -I/usr/include/qt4    -o CMakeFiles/cmTryCompileExec1883242068.dir/CheckSymbolExists.cxx.o -c /home/janis/git/mikroCom/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx
+/home/janis/git/mikroCom/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx: In function ‘int main(int, char**)’:
+/home/janis/git/mikroCom/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:8:19: error: ‘Q_WS_MAC’ was not declared in this scope
+make[1]: *** [CMakeFiles/cmTryCompileExec1883242068.dir/CheckSymbolExists.cxx.o] Error 1
+make[1]: Leaving directory `/home/janis/git/mikroCom/build/CMakeFiles/CMakeTmp'
+make: *** [cmTryCompileExec1883242068/fast] Error 2
 
-File /home/janis/Documents/qt/mikrocom/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:
+File /home/janis/git/mikroCom/build/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:
 /* */
 #include <QtCore/qglobal.h>
 

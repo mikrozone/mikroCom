@@ -188,8 +188,8 @@ CMakeFiles/mikrocom.dir/main.o
  /usr/include/qt4/QtGui/qwmatrix.h
  ui_mikrocomdlg.h
 CMakeFiles/mikrocom.dir/moc_qcppdialogimpl.o
- /home/janis/git/mikroCom/build/../qcppdialogimpl.h
- /home/janis/git/mikroCom/build/moc_qcppdialogimpl.cxx
+ /home/janis/git/mikroCom/debug/../qcppdialogimpl.h
+ /home/janis/git/mikroCom/debug/moc_qcppdialogimpl.cxx
  /usr/include/qt4/Qt3Support/Q3MimeSourceFactory
  /usr/include/qt4/Qt3Support/q3cstring.h
  /usr/include/qt4/Qt3Support/q3mimefactory.h

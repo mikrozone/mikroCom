@@ -41,7 +41,7 @@ CMAKE_EDIT_COMMAND = /usr/bin/ccmake
 CMAKE_SOURCE_DIR = /home/janis/git/mikroCom
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/janis/git/mikroCom/build
+CMAKE_BINARY_DIR = /home/janis/git/mikroCom/debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/mikrocom.dir/depend.make
@@ -53,18 +53,18 @@ include CMakeFiles/mikrocom.dir/progress.make
 include CMakeFiles/mikrocom.dir/flags.make
 
 moc_qcppdialogimpl.cxx: ../qcppdialogimpl.h
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/janis/git/mikroCom/build/CMakeFiles $(CMAKE_PROGRESS_1)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/janis/git/mikroCom/debug/CMakeFiles $(CMAKE_PROGRESS_1)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating moc_qcppdialogimpl.cxx"
-	/usr/bin/moc-qt4 -I/usr/include/qt4/QtDesigner -I/usr/include/qt4/QtDeclarative -I/usr/include/qt4/QtScriptTools -I/usr/include/qt4/QtDBus -I/usr/include/qt4/QtDesigner -I/usr/include/qt4/QtXml -I/usr/include/qt4/QtSql -I/usr/include/qt4/QtOpenGL -I/usr/include/qt4/QtNetwork -I/usr/include/qt4/phonon -I/usr/include/qt4/QtXmlPatterns -I/usr/include/qt4/QtWebKit -I/usr/include/qt4/QtHelp -I/usr/include/qt4/QtUiTools -I/usr/include/qt4/QtTest -I/usr/include/qt4/QtScript -I/usr/include/qt4/QtSvg -I/usr/include/qt4/Qt3Support -I/usr/include/qt4/QtGui -I/usr/include/qt4/QtCore -I/usr/share/qt4/mkspecs/default -I/usr/include/qt4 -I/usr/include/qt4/QtCore -I/home/janis/git/mikroCom/build -DQT3_SUPPORT -o /home/janis/git/mikroCom/build/moc_qcppdialogimpl.cxx /home/janis/git/mikroCom/qcppdialogimpl.h
+	/usr/bin/moc-qt4 -I/usr/include/qt4/QtDesigner -I/usr/include/qt4/QtDeclarative -I/usr/include/qt4/QtScriptTools -I/usr/include/qt4/QtDBus -I/usr/include/qt4/QtDesigner -I/usr/include/qt4/QtXml -I/usr/include/qt4/QtSql -I/usr/include/qt4/QtOpenGL -I/usr/include/qt4/QtNetwork -I/usr/include/qt4/phonon -I/usr/include/qt4/QtXmlPatterns -I/usr/include/qt4/QtWebKit -I/usr/include/qt4/QtHelp -I/usr/include/qt4/QtUiTools -I/usr/include/qt4/QtTest -I/usr/include/qt4/QtScript -I/usr/include/qt4/QtSvg -I/usr/include/qt4/Qt3Support -I/usr/include/qt4/QtGui -I/usr/include/qt4/QtCore -I/usr/share/qt4/mkspecs/default -I/usr/include/qt4 -I/usr/include/qt4/QtCore -I/home/janis/git/mikroCom/debug -DQT3_SUPPORT -o /home/janis/git/mikroCom/debug/moc_qcppdialogimpl.cxx /home/janis/git/mikroCom/qcppdialogimpl.h
 
 ui_mikrocomdlg.h: ../mikrocomdlg.ui
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/janis/git/mikroCom/build/CMakeFiles $(CMAKE_PROGRESS_2)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/janis/git/mikroCom/debug/CMakeFiles $(CMAKE_PROGRESS_2)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold "Generating ui_mikrocomdlg.h"
-	/usr/bin/uic-qt4 -o /home/janis/git/mikroCom/build/ui_mikrocomdlg.h /home/janis/git/mikroCom/mikrocomdlg.ui
+	/usr/bin/uic-qt4 -o /home/janis/git/mikroCom/debug/ui_mikrocomdlg.h /home/janis/git/mikroCom/mikrocomdlg.ui
 
 CMakeFiles/mikrocom.dir/main.o: CMakeFiles/mikrocom.dir/flags.make
 CMakeFiles/mikrocom.dir/main.o: ../main.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/janis/git/mikroCom/build/CMakeFiles $(CMAKE_PROGRESS_3)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/janis/git/mikroCom/debug/CMakeFiles $(CMAKE_PROGRESS_3)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/mikrocom.dir/main.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/mikrocom.dir/main.o -c /home/janis/git/mikroCom/main.cpp
 
@@ -87,7 +87,7 @@ CMakeFiles/mikrocom.dir/main.o.provides.build: CMakeFiles/mikrocom.dir/main.o
 
 CMakeFiles/mikrocom.dir/qcppdialogimpl.o: CMakeFiles/mikrocom.dir/flags.make
 CMakeFiles/mikrocom.dir/qcppdialogimpl.o: ../qcppdialogimpl.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/janis/git/mikroCom/build/CMakeFiles $(CMAKE_PROGRESS_4)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/janis/git/mikroCom/debug/CMakeFiles $(CMAKE_PROGRESS_4)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/mikrocom.dir/qcppdialogimpl.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/mikrocom.dir/qcppdialogimpl.o -c /home/janis/git/mikroCom/qcppdialogimpl.cpp
 
@@ -110,17 +110,17 @@ CMakeFiles/mikrocom.dir/qcppdialogimpl.o.provides.build: CMakeFiles/mikrocom.dir
 
 CMakeFiles/mikrocom.dir/moc_qcppdialogimpl.o: CMakeFiles/mikrocom.dir/flags.make
 CMakeFiles/mikrocom.dir/moc_qcppdialogimpl.o: moc_qcppdialogimpl.cxx
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/janis/git/mikroCom/build/CMakeFiles $(CMAKE_PROGRESS_5)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/janis/git/mikroCom/debug/CMakeFiles $(CMAKE_PROGRESS_5)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/mikrocom.dir/moc_qcppdialogimpl.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/mikrocom.dir/moc_qcppdialogimpl.o -c /home/janis/git/mikroCom/build/moc_qcppdialogimpl.cxx
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/mikrocom.dir/moc_qcppdialogimpl.o -c /home/janis/git/mikroCom/debug/moc_qcppdialogimpl.cxx
 
 CMakeFiles/mikrocom.dir/moc_qcppdialogimpl.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/mikrocom.dir/moc_qcppdialogimpl.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/janis/git/mikroCom/build/moc_qcppdialogimpl.cxx > CMakeFiles/mikrocom.dir/moc_qcppdialogimpl.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/janis/git/mikroCom/debug/moc_qcppdialogimpl.cxx > CMakeFiles/mikrocom.dir/moc_qcppdialogimpl.i
 
 CMakeFiles/mikrocom.dir/moc_qcppdialogimpl.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/mikrocom.dir/moc_qcppdialogimpl.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/janis/git/mikroCom/build/moc_qcppdialogimpl.cxx -o CMakeFiles/mikrocom.dir/moc_qcppdialogimpl.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/janis/git/mikroCom/debug/moc_qcppdialogimpl.cxx -o CMakeFiles/mikrocom.dir/moc_qcppdialogimpl.s
 
 CMakeFiles/mikrocom.dir/moc_qcppdialogimpl.o.requires:
 .PHONY : CMakeFiles/mikrocom.dir/moc_qcppdialogimpl.o.requires
@@ -166,6 +166,6 @@ CMakeFiles/mikrocom.dir/clean:
 
 CMakeFiles/mikrocom.dir/depend: moc_qcppdialogimpl.cxx
 CMakeFiles/mikrocom.dir/depend: ui_mikrocomdlg.h
-	cd /home/janis/git/mikroCom/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/janis/git/mikroCom /home/janis/git/mikroCom /home/janis/git/mikroCom/build /home/janis/git/mikroCom/build /home/janis/git/mikroCom/build/CMakeFiles/mikrocom.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/janis/git/mikroCom/debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/janis/git/mikroCom /home/janis/git/mikroCom /home/janis/git/mikroCom/debug /home/janis/git/mikroCom/debug /home/janis/git/mikroCom/debug/CMakeFiles/mikrocom.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/mikrocom.dir/depend
 

@@ -6,9 +6,9 @@
 
 #IncludeRegexTransform: 
 
-/home/janis/git/mikroCom/build/../qcppdialogimpl.h
+/home/janis/git/mikroCom/debug/../qcppdialogimpl.h
 ui_mikrocomdlg.h
-/home/janis/git/mikroCom/build/../ui_mikrocomdlg.h
+/home/janis/git/mikroCom/debug/../ui_mikrocomdlg.h
 termios.h
 -
 qsocketnotifier.h
@@ -26,9 +26,9 @@ QEvent
 QWidget
 -
 
-/home/janis/git/mikroCom/build/moc_qcppdialogimpl.cxx
+/home/janis/git/mikroCom/debug/moc_qcppdialogimpl.cxx
 ../qcppdialogimpl.h
-/home/janis/git/mikroCom/build/../qcppdialogimpl.h
+/home/janis/git/mikroCom/debug/../qcppdialogimpl.h
 
 /home/janis/git/mikroCom/main.cpp
 QApplication

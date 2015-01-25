@@ -53,7 +53,7 @@ CMAKE_EDIT_COMMAND = /usr/bin/ccmake
 CMAKE_SOURCE_DIR = /home/janis/git/mikroCom
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/janis/git/mikroCom/build
+CMAKE_BINARY_DIR = /home/janis/git/mikroCom/debug
 
 #=============================================================================
 # Target rules for target CMakeFiles/mikrocom.dir
@@ -62,7 +62,7 @@ CMAKE_BINARY_DIR = /home/janis/git/mikroCom/build
 CMakeFiles/mikrocom.dir/all:
 	$(MAKE) -f CMakeFiles/mikrocom.dir/build.make CMakeFiles/mikrocom.dir/depend
 	$(MAKE) -f CMakeFiles/mikrocom.dir/build.make CMakeFiles/mikrocom.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/janis/git/mikroCom/build/CMakeFiles  1 2 3 4 5
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/janis/git/mikroCom/debug/CMakeFiles  1 2 3 4 5
 	@echo "Built target mikrocom"
 .PHONY : CMakeFiles/mikrocom.dir/all
 
@@ -72,9 +72,9 @@ all: CMakeFiles/mikrocom.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/mikrocom.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/janis/git/mikroCom/build/CMakeFiles 5
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/janis/git/mikroCom/debug/CMakeFiles 5
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/mikrocom.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/janis/git/mikroCom/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/janis/git/mikroCom/debug/CMakeFiles 0
 .PHONY : CMakeFiles/mikrocom.dir/rule
 
 # Convenience name for target.
