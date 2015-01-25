@@ -1,4 +1,6 @@
-/*
+/*  Copyright (C) 2004-2005 Alexander Neundorf <neundorf@kde.org>
+    Modified by mikrozone.eu
+
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
     the Free Software Foundation; either version 2 of the License, or
@@ -15,7 +17,7 @@
 */
 
 #include "qcppdialogimpl.h"
-
+//#include <QAbstractScrollArea>
 #include <qcombobox.h>
 #include <qpushbutton.h>
 #include <qcheckbox.h>
@@ -94,14 +96,14 @@ QCPPDialogImpl::QCPPDialogImpl(QWidget* parent)
    connect(m_clearOutputPb, SIGNAL(clicked()), this, SLOT(clearOutput()));
 //   connect(m_clearInputPb, SIGNAL(clicked()), m_oldCmdsLb, SLOT(clear()));
 
-   connect(m_cmdLe, SIGNAL(returnPressed()), this, SLOT(execCmd()));
+   //connect(m_cmdLe, SIGNAL(returnPressed()), this, SLOT(execCmd()));
 
    connect(m_sendPb, SIGNAL(clicked()), this, SLOT(sendFile()));
    connect(m_aboutPb, SIGNAL(clicked()), this, SLOT(showAboutMsg()));
    connect(m_quitPb, SIGNAL(clicked()), this, SLOT(close()));
 
    connect(m_oldCmdsLb, SIGNAL(itemClicked(QListWidgetItem*)), this, SLOT(oldCmdClicked(QListWidgetItem*)));
-   connect(m_oldCmdsLb, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(execCmd()));
+   //connect(m_oldCmdsLb, SIGNAL(itemDoubleClicked(QListWidgetItem*)), this, SLOT(execCmd(bool)));
 
    connect(m_hexOutputCb, SIGNAL(toggled(bool)), this, SLOT(hexOutputClicked(bool)));
 
@@ -141,11 +143,6 @@ QCPPDialogImpl::QCPPDialogImpl(QWidget* parent)
    accel->insertItem(CTRL+Key_S, 19);
    connect(accel, SIGNAL(activated(int)), this, SLOT(sendByte(int)));*/
 
-   //Edizontn: *****************
-   //connect(m_RTS, SIGNAL(activated(int)), this, SLOT(saveSettings()));
-   //connect(m_DTR, SIGNAL(activated(int)), this, SLOT(saveSettings()));
-   // **************************
-
    m_outputTimerStart.start();
 
    readSettings();
@@ -153,6 +150,7 @@ QCPPDialogImpl::QCPPDialogImpl(QWidget* parent)
    disconnectTTY();
 
    m_cmdLe->installEventFilter(this);
+ //  m_outputView->installEventFilter(this);          // generovanie eventov od objeku
 }
 
 void QCPPDialogImpl::fillBaudCb()
@@ -386,7 +384,7 @@ void QCPPDialogImpl::readSettings()
 
 void QCPPDialogImpl::showAboutMsg()
 {
-   QMessageBox::about(this, tr("About mikroCom"), tr("mikroCom 0.0.1 <br>&lt;edizontn@gmail.com&gt; [www.mikrozone.eu]<br>2015<br>Licensed under the GNU GPL v2"));
+   QMessageBox::about(this, tr("About mikroCom"), tr("mikroCom 0.0.1 <br>&lt;edizontn@gmail.com&gt; [www.mikrozone.eu]<br>2015<br>based on CuteCom 0.22.0<br>(c)2004-2009 Alexander Neundorf<br>Licensed under the GNU GPL v2"));
 }
 
 void QCPPDialogImpl::sendFile()
@@ -637,58 +635,6 @@ void QCPPDialogImpl::sendDone()
    std::cerr<<"sx exited"<<std::endl;
 }
 
-bool QCPPDialogImpl::eventFilter(QObject* watched, QEvent *e)
-{
-   QKeyEvent *ke=(QKeyEvent*)e;
-   if ((watched==m_cmdLe)
-       && (e->type()==QEvent::KeyPress))
-   {
-      if (ke->state()==Qt::NoModifier)
-      {
-         if (ke->key()==Qt::Key_Up)
-         {
-            prevCmd();
-            return true;
-         }
-         else if (ke->key()==Qt::Key_Down)
-         {
-            nextCmd();
-            return true;
-         }
-      }
-      else if (ke->modifiers()==Qt::ControlModifier)
-      {
-         if (ke->key()==Qt::Key_C)
-         {
-//            std::cerr<<"c";
-            m_keyCode=3;
-            sendByte(m_keyCode, 0);
-            m_keyRepeatTimer.setSingleShot(false); 
-            m_keyRepeatTimer.start(0);
-            return true;
-         }
-         else if (ke->key()==Qt::Key_Q)
-         {
-//            std::cerr<<"#";
-            m_keyCode=17;
-            sendByte(m_keyCode, 0);
-            return true;
-         }
-         else if (ke->key()==Qt::Key_S)
-         {
-            m_keyCode=19;
-            sendByte(m_keyCode, 0);
-            return true;
-         }
-      }
-   }
-   else if ((watched==m_cmdLe) && (e->type()==QEvent::KeyRelease))
-   {
-      m_keyRepeatTimer.stop();
-   }
-
-   return false;
-}
 
 void QCPPDialogImpl::sendKey()
 {
@@ -706,6 +652,7 @@ void QCPPDialogImpl::oldCmdClicked(QListWidgetItem* item)
    m_cmdLe->setText(item->text());
    m_cmdBufIndex=m_oldCmdsLb->count()-index;
    m_cmdLe->setFocus();
+   execCmd(false);
 }
 
 void QCPPDialogImpl::prevCmd()
@@ -749,12 +696,13 @@ void QCPPDialogImpl::nextCmd()
 //   std::cerr<<"next() count: "<<m_oldCmdsLb->count()<<" bufIndex: "<<m_cmdBufIndex<<std::endl;
 }
 
-void QCPPDialogImpl::execCmd()
+void QCPPDialogImpl::execCmd(bool AddToList)
 {
    m_cmdBufIndex=0;
-   QString cmd=m_cmdLe->text().trimmed();
-   m_cmdLe->clear();
-   if (!cmd.isEmpty())
+   QString cmd=m_cmdLe->text(); //->text().trimmed();
+   //m_cmdLe->clear();
+   //if (!cmd.isEmpty())
+   if(AddToList)
    {
       if ((m_oldCmdsLb->count()<1) || (m_oldCmdsLb->item(m_oldCmdsLb->count()-1)->text()!=cmd))
       {
@@ -777,9 +725,13 @@ void QCPPDialogImpl::execCmd()
       return;
    }
 
-   sendString(cmd);
+   // EdizonTN ***********
+    m_cmdLe->clear();
+    sendString(cmd);
+    EndLineString(0);            // odosli ukoncovaci znak CR, LF alebo CR+LF,... - podla nastavenia
+   // ********************
 
-/*   std::cerr<<"paras: "<<m_outputView->paragraphs()<<std::endl;
+   /*   std::cerr<<"paras: "<<m_outputView->paragraphs()<<std::endl;
    if (m_outputView->paragraphs()>1100)
    {
       m_outputView->setUpdatesEnabled(false);
@@ -853,41 +805,56 @@ bool QCPPDialogImpl::sendString(const QString& s)
       bytes++;
    }
 
-   if (lineMode==0)
-   {
-      if (!sendByte('\n', charDelay))
-      {
-         return false;
-      }
-   }
-   else if (lineMode==1)
-   {
-      if (!sendByte('\r', charDelay))
-      {
-         return false;
-      }
-   }
-   else if (lineMode==2)
-   {
-      if (!sendByte('\r', charDelay))
-      {
-         return false;
-      }
-      if (!sendByte('\n', charDelay))
-      {
-         return false;
-      }
-   }
+//   if (! EndLineString(charDelay))            // odosli ukoncovaci znak CR, LF alebo CR+LF,...
+//   {
+//      return false;
+//   }
+
+
    return true;
+}
+
+bool QCPPDialogImpl::EndLineString(int charDelay)
+{
+    int SelectedMode = m_inputModeCb->currentIndex();
+
+    if (SelectedMode==0)
+    {
+       if (!sendByte('\n', charDelay))
+       {
+          return false;
+       }
+    }
+    else if (SelectedMode==1)
+    {
+       if (!sendByte('\r', charDelay))
+       {
+          return false;
+       }
+    }
+    else if (SelectedMode==2)
+    {
+       if (!sendByte('\r', charDelay))
+       {
+          return false;
+       }
+       if (!sendByte('\n', charDelay))
+       {
+          return false;
+       }
+    }
 }
 
 bool QCPPDialogImpl::sendByte(char c, unsigned int delay)
 {
-   if (m_fd==-1)
+
+    if (m_fd==-1)
    {
       return false;
    }
    int res=::write(m_fd, &c, 1);
+   fprintf(stderr, "sendByte: %02x\n", c);
+
 //   std::cerr<<"wrote "<<(unsigned int)(c)<<std::endl;
    if (res<1)
    {
@@ -929,15 +896,9 @@ void QCPPDialogImpl::connectTTY()
       QMessageBox::information(this, tr("Error"), tr("Opening the device neither for reading nor writing doesn't seem to make much sense ;-)"));
       return;
    }
-   // EdizonTN ********************
-   if (m_RTS->isChecked()) ctlflags |= TIOCM_RTS;
-   else ctlflags &= !TIOCM_RTS;
 
-   if (m_DTR->isChecked()) ctlflags |= TIOCM_DTR;
-   else ctlflags &= !TIOCM_DTR;
-   // *****************************
-
-   m_fd=open(dev.toLatin1(), flags | O_NDELAY);
+   //m_fd=open(dev.toLatin1(), flags | O_NDELAY);
+   m_fd=open(dev.toLatin1(), flags | O_NOCTTY | O_NDELAY);
    if (m_fd<0)
    {
       std::cerr<<"opening failed"<<std::endl;
@@ -945,7 +906,20 @@ void QCPPDialogImpl::connectTTY()
       QMessageBox::information(this, tr("Error"), tr("Could not open %1").arg(dev));
       return;
    }
-   ioctl(m_fd, TIOCMSET, &ctlflags);
+
+   // EdizonTN ********************
+   if (m_RTS->isChecked()) ctlflags |= TIOCM_RTS;
+   else ctlflags &= !TIOCM_RTS;
+
+   if (m_DTR->isChecked()) ctlflags |= TIOCM_DTR;
+   else ctlflags &= !TIOCM_DTR;
+
+   m_outputBuffer="";
+
+   // *****************************
+   ioctl(m_fd, TIOCMSET, &ctlflags);        // nastav DTR a RTS
+
+
 
    // flushing is to be done after opening. This prevents first read and write to be spam'ish.
    tcflush(m_fd, TCIOFLUSH);
@@ -1264,8 +1238,8 @@ void QCPPDialogImpl::readData(int fd)
    {
       return;
    }
-
-   int bytesRead=::read(m_fd, m_buf, COMM_BUFFSIZE);
+   fcntl(m_fd, F_SETFL, FNDELAY);
+   int bytesRead= read(m_fd, m_buf, COMM_BUFFSIZE);
 
    if (bytesRead<0)
    {
@@ -1279,6 +1253,8 @@ void QCPPDialogImpl::readData(int fd)
       disconnectTTY();
       return;
    }
+
+   fprintf(stderr, "ReadData[%d]: %s\n", bytesRead, m_buf);
 
    const char* c=m_buf;
    if (m_sz!=0)
@@ -1374,21 +1350,12 @@ void QCPPDialogImpl::addOutput(const QString& text)
          doOutput();
          m_outputTimerStart.restart();
       }
-      m_outputTimer.setSingleShot(true); 
+      m_outputTimer.setSingleShot(true);
       m_outputTimer.start(50);
    }
 }
 
-void QCPPDialogImpl::doOutput()
-{
-   if (m_outputBuffer.isEmpty())
-   {
-      return;
-   }
 
-   m_outputView->append(m_outputBuffer); 
-   m_outputBuffer.clear();
-}
 
 void QCPPDialogImpl::hexOutputClicked(bool /* on */)
 {
@@ -1481,4 +1448,102 @@ void QCPPDialogImpl::on_m_RTS_clicked(bool checked)
         ioctl(m_fd, TIOCMSET, &flag);
     }
 }
+
+
+bool QCPPDialogImpl::eventFilter(QObject* watched, QEvent *e)
+{
+   QKeyEvent *ke=(QKeyEvent*)e;
+   QString sbyte;
+
+      if ((watched==m_cmdLe) && (e->type()==QEvent::KeyPress))
+      {
+         fprintf(stderr, "Key pressed: %d\n", ke->key());
+         if (ke->key() == Qt::Key_Return)   // stlaceny ENTER ???? - NEFUNGUJE !!!!
+         {
+            //m_cmdLe->clear();               // vymaz vstup, nebudeme vysielat dvakrat...
+            // EndLineString(0);            // odosli ukoncovaci znak CR, LF alebo CR+LF,... - podla nastavenia
+            execCmd(true);
+            return(true);
+         }
+
+         sbyte = ke->text();
+         if(!sbyte.data()->isNull())       // ak nebol stlaceny ALT, CTRL a podobne...
+         {
+             sendByte(sbyte.data()->toAscii(), 0);
+            //fprintf(stderr, "sendByte: %s\n", sbyte.data());
+         }
+
+   }
+
+   if ((watched==m_cmdLe) && (e->type()==QEvent::KeyPress))
+   {
+      if (ke->state()==Qt::NoModifier)
+      {
+/*
+         if (ke->key()==Qt::Key_Up)
+         {
+            prevCmd();
+            return true;
+         }
+         else if (ke->key()==Qt::Key_Down)
+         {
+            nextCmd();
+            return true;
+         }
+*/
+      }
+      else if (ke->modifiers()==Qt::ControlModifier)
+      {
+         if (ke->key()==Qt::Key_C)
+         {
+//            std::cerr<<"c";
+            m_keyCode=3;
+            sendByte(m_keyCode, 0);
+            m_keyRepeatTimer.setSingleShot(false);
+            m_keyRepeatTimer.start(0);
+            return true;
+         }
+         else if (ke->key()==Qt::Key_Q)
+         {
+//            std::cerr<<"#";
+            m_keyCode=17;
+            sendByte(m_keyCode, 0);
+            return true;
+         }
+         else if (ke->key()==Qt::Key_S)
+         {
+            m_keyCode=19;
+            sendByte(m_keyCode, 0);
+            return true;
+         }
+      }
+   }
+   else if ((watched==m_cmdLe) && (e->type()==QEvent::KeyRelease))
+   {
+      m_keyRepeatTimer.stop();
+   }
+
+   return false;
+}
+
 // **************************
+
+// funkcia spustana eventom: timer event
+void QCPPDialogImpl::doOutput()
+{
+    QTextCursor c =  m_outputView->textCursor();
+   if (m_outputBuffer.isEmpty())
+   {
+      return;
+   }
+
+   // m_outputView->insertPlainText("[");
+   m_outputView->insertPlainText(m_outputBuffer);
+   // m_outputView->insertPlainText("]");
+
+   m_outputView->moveCursor(QTextCursor::End);
+   c.movePosition(QTextCursor::End);
+   m_outputView->setTextCursor(c);
+
+   m_outputBuffer.clear();
+}

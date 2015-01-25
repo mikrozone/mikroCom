@@ -1,4 +1,7 @@
-/*  This program is free software; you can redistribute it and/or modify
+/*  Copyright (C) 2004-2005 Alexander Neundorf <neundorf@kde.org>
+    Modified by mikrozone.eu
+
+    This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
     the Free Software Foundation; either version 2 of the License, or
     (at your option) any later version.
@@ -44,7 +47,7 @@ class QCPPDialogImpl:public QWidget, public Ui::mikroComDlg
       QCPPDialogImpl(QWidget* parent);
       virtual bool eventFilter(QObject* watched, QEvent *e);
    protected slots:
-      void execCmd();
+      void execCmd(bool AddToList);
       void readData(int fd);
       void sendFile();
       void showAboutMsg();
@@ -59,7 +62,7 @@ class QCPPDialogImpl:public QWidget, public Ui::mikroComDlg
       void killSz();
       void enableSettingWidgets(bool enable);
       void doOutput();
-      void sendKey();
+      void sendKey();      
       void hexOutputClicked(bool on);
       void enableLogging(bool on);
       void chooseLogFile();
@@ -68,6 +71,7 @@ class QCPPDialogImpl:public QWidget, public Ui::mikroComDlg
       void fillBaudCb();
       void addOutput(const QString& text);
       bool sendByte(char c, unsigned int delay);
+      bool EndLineString(int charDelay);
       void disconnectTTYRestore(bool restore);
       void readSettings();
       void prevCmd();
